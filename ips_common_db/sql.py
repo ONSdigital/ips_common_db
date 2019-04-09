@@ -4,7 +4,7 @@ from typing import Optional
 import pandas
 import sqlalchemy
 from ips_common.config.configuration import Configuration
-from ips_common.logging import log
+from ips_common.ips_logging import log
 
 eng = None
 
