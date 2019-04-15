@@ -216,3 +216,14 @@ def execute_sql_statement(sq):
     except Exception as err:
         log.error(f"execute_sql_statement failed: {err}")
         raise err
+
+
+def execute_sql_statement_id(sq):
+    try:
+        conn = get_sql_connection()
+        conn.execute(sq)
+
+        return conn.execute("SELECT @@IDENTITY AS id")
+    except Exception as err:
+        log.error(f"execute_sql_statement failed: {err}")
+        raise err
